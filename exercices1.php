@@ -1,33 +1,53 @@
 <?php
-$age = 15;
+$age = 12;
+$langue= "anglais";
+$sexe="fille";
+$variable="23";
  
-if ($age <= 12) // SI l'âge est inférieur ou égal à 12
+
+if ($age <= 12 AND $langue == "français")
 {
-    echo "Salut gamin ! Bienvenue sur mon site !<br />";
-    $autorisation_entrer = "Oui";
+    echo "Bienvenue sur mon site !";
 }
-else // SINON
+elseif ($age <= 12 AND $langue == "anglais")
 {
-    echo "Ceci est un site pour enfants, vous êtes trop vieux pour pouvoir  entrer. Au revoir !<br />";
-    $autorisation_entrer = "Non";
+    echo "Welcome to my website!";
 }
- 
-echo "Avez-vous l'autorisation d'entrer ? La réponse est : $autorisation_entrer";
-?> <br>
+
+else  {
+	echo "Ouf t'es vieux";
+}
+
+
+?>
+<hr>
+<!-- ========================================================================= -->
+<h4>Avec OR</h4>
 
 <?php
-if ($autorisation_entrer == "Oui") // SI on a l'autorisation d'entrer
+if ($sexe == "fille" OR $sexe == "garçon")
 {
-    // instructions à exécuter quand on est autorisé à entrer
-    echo "OK";
+    echo "Salut Terrien !";
 }
-elseif ($autorisation_entrer == "Non") // SINON SI on n'a pas l'autorisation d'entrer
+else
 {
-    // instructions à exécuter quand on n'est pas autorisé à entrer
-    echo "Pas cool";
-}
-else // SINON (la variable ne contient ni Oui ni Non, on ne peut pas agir)
-{
-    echo "Euh, je ne connais pas ton âge, tu peux me le rappeler s'il te plaît ?";
+    echo "Euh, si t'es ni une fille ni un garçon, t'es quoi alors ?";
 }
 ?>
+<hr>
+
+<!-- =========================================================================== -->
+<h4>Bonus</h4>
+
+<?php
+if ($variable == 23)
+{
+?>
+<strong>Bravo !</strong> Vous avez trouvé le nombre mystère !
+<?php
+}
+?>
+<!-- on n'a pas utilisé deecho. En effet, il vous suffit d'ouvrir l'accolade ({), puis de fermer la balise PHP (?>), et vous pouvez mettre tout le texte à afficher que vous voulez en HTML !
+Rudement pratique quand il y a de grosses quantités de texte à afficher, et aussi pour éviter d'avoir à se prendre la tête avec les antislashs devant les guillemets ("ou'). -->
+
+<!-- =========================================================================== -->
